@@ -2,6 +2,11 @@ module Data.PriorityQueue where
 
  data Queue a = Empty | Queue Int a (Queue a) (Queue a)          deriving Show
 
+ instance Eq a  => Eq (Queue a)where
+  (==) (Empty) (Empty) = True
+  (==) (Queue _ _ _ _) (Empty) = False
+  (==) (Empty) (Queue _ _ _ _) = False
+  (==) (Queue rank1 v1 l1 r1)  (Queue rank2 v2 l2 r2) = rank1 == rank2 && v1 == v2 && l1 == l2 && r1 == r2
 
  mergeQs :: Ord a => Queue a -> Queue a -> Queue a
  mergeQs Empty q = q
@@ -32,9 +37,9 @@ module Data.PriorityQueue where
  push :: Ord a => a -> Queue a -> Queue a
  push v q = mergeQs (singletonQ v) q
 
- peek :: Queue a ->  a
- peek Empty = error "Nothing inside!"
- peek (Queue _ v _ _) =  v
+ peak :: Queue a ->  a
+ peal Empty = error "Nothing inside!"
+ peak (Queue _ v _ _) =  v
 
  pop :: Ord a => Queue a -> Queue a
  pop Empty = error "Nothing inside!"
