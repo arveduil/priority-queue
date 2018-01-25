@@ -4,7 +4,7 @@ module Data.PriorityQueueL where
 
  --pop for priority queue
  pqPop :: PQueue a -> PQueue a
- pqPop (PQueue []) = (PQueue []) --error "Nothing inside!"
+ pqPop (PQueue []) = error "Nothing inside!"
  pqPop (PQueue (x:xs)) = PQueue (xs)
 
 --peak for priority queue
