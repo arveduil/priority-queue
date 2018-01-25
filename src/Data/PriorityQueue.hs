@@ -31,14 +31,14 @@ module Data.PriorityQueue where
  emptyQ :: Queue a
  emptyQ = Empty
 
- singletonQ :: a -> Queue a
+ singletonQ :: Ord a =>  a -> Queue a
  singletonQ v = Queue 1 v Empty Empty
 
  push :: Ord a => a -> Queue a -> Queue a
  push v q = mergeQs (singletonQ v) q
 
  peak :: Queue a ->  a
- peal Empty = error "Nothing inside!"
+ peak Empty = error "Nothing inside!"
  peak (Queue _ v _ _) =  v
 
  pop :: Ord a => Queue a -> Queue a
