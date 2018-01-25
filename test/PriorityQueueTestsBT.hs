@@ -3,6 +3,7 @@ import qualified Data.PriorityQueueBT as QBT
 import qualified Data.PriorityQueueL as QL
 import Data.List
 import Test.HUnit
+import PriorityQueueTestsL as TL
 
 
 instance (Arbitrary a, Ord a) => Arbitrary (QBT.Queue a) where
@@ -87,7 +88,7 @@ main = do
        quickCheck (heapOrdered :: QBT.Queue Int -> Bool)
        putStrLn "Verifying Greater Ordered Property"
        quickCheck (verifyGreatest :: QBT.Queue Int -> Bool)
-       
+       TL.main
        
        
 
