@@ -2,6 +2,12 @@ module Data.PriorityQueueL where
 
  data PQueue a = PQueue [a] deriving (Show)
 
+instance Eq a  => Eq (PQueue a)where
+  (==) (PQueue []) (PQueue []) = True
+  (==) (PQueue a) (PQueue []) = False
+  (==) (PQueue []) (PQueue a) = False
+  (==) (PQueue (x:xs))  (PQueue (y:ys)) = x == y && PQueue(xs) == PQueue(ys)
+
  --pop for priority queue
  pqPop :: PQueue a -> PQueue a
  pqPop (PQueue []) = error "Nothing inside!"
