@@ -12,9 +12,9 @@ main = do
        q3 = push 3 q2
        q4 = push 4 q3
    -- This should print 2 (minimum value)
-   print (peak q4)
+   print (peek q4)
    -- This should remove minimum
    let q5 = Q.pop q4
    -- This should now print 10
-   print (Q.peak q5)
+   print (Q.peek q5)
 

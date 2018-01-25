@@ -37,9 +37,9 @@ module Data.PriorityQueueBT where
  push :: Ord a => a -> Queue a -> Queue a
  push v q = mergeQs (singletonQ v) q
 
- peak :: Queue a ->  a
- peak Empty = error "Nothing inside!"
- peak (Queue _ v _ _) =  v
+ peek :: Queue a ->  a
+ peek Empty = error "Nothing inside!"
+ peek (Queue _ v _ _) =  v
 
  pop :: Ord a => Queue a -> Queue a
  pop Empty = error "Nothing inside!"
@@ -48,14 +48,3 @@ module Data.PriorityQueueBT where
  isEmpty :: Queue a -> Bool
  isEmpty Empty = True
  isEmpty (Queue _ _ _ _) = False
-
--- showPoped :: (Maybe a, Queue a) -> a
- --showPoped (Nothing , _) = error "Nothing inside!"
---showPoped (Just a, _) = a
-
- --extractQueue :: (Maybe a, Queue a) -> Queue a
--- extractQueue (_, Queue ra v l r) = (Queue  ra v l r )
-
- --extractMaybe :: Maybe a -> a
- --extractMaybe Nothing = error "Nothing inside!"
- --extractMaybe (Just x) = x
