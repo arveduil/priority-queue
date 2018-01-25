@@ -1,5 +1,5 @@
 import Test.QuickCheck
-import qualified Data.PriorityQueue as Q
+import qualified Data.PriorityQueueBT as Q
 import Data.List
 import Test.HUnit
 

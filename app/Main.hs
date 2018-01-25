@@ -1,7 +1,7 @@
 module Main where
 
 --import Test.QuickCheck
-import Data.PriorityQueue as Q
+import Data.PriorityQueueBT as Q
     
 
 main :: IO ()

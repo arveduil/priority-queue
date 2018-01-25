@@ -1,4 +1,4 @@
-module Data.PriorityQueue where
+module Data.PriorityQueueBT where
 
  data Queue a = Empty | Queue Int a (Queue a) (Queue a)          deriving Show
 
