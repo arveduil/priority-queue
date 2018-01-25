@@ -2,7 +2,7 @@ module Data.PriorityQueueL where
 
  data PQueue a = PQueue [a] deriving (Show)
 
-instance Eq a  => Eq (PQueue a)where
+ instance Eq a  => Eq (PQueue a)where
   (==) (PQueue []) (PQueue []) = True
   (==) (PQueue a) (PQueue []) = False
   (==) (PQueue []) (PQueue a) = False
