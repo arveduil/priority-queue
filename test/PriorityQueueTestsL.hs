@@ -7,9 +7,9 @@ module PriorityQueueTestsL where
         
     --HUnit tests for push operation in list priority queue
     testPushL1 = TestCase $ assertEqual "test: push element to empty list queue" ( QL.PQueue[1] ) ( QL.pqPush 1 (PQueue[]) )
-    testPushL2 = TestCase $ assertEqual "test: push greater  element to not empty list queue" ( QL.PQueue[1,2,3] ) ( QL.pqPush 3 (PQueue[1,2]) )
-    testPushL3 = TestCase $ assertEqual "test: push mid      element to not empty list queue" ( QL.PQueue[1,2,3] ) ( QL.pqPush 2 (PQueue[1,3]) )
-    testPushL4 = TestCase $ assertEqual "test: push smallest element to not empty list queue" ( QL.PQueue[1,2,3] ) ( QL.pqPush 1 (PQueue[2,3]) )
+    testPushL2 = TestCase $ assertEqual "test: push greater  element to not empty list queue" ( QL.PQueue[3,2,1] ) ( QL.pqPush 3 (PQueue[2,1]) )
+    testPushL3 = TestCase $ assertEqual "test: push mid      element to not empty list queue" ( QL.PQueue[3,2,1] ) ( QL.pqPush 2 (PQueue[3,1]) )
+    testPushL4 = TestCase $ assertEqual "test: push smallest element to not empty list queue" ( QL.PQueue[3,2,1] ) ( QL.pqPush 1 (PQueue[3,2]) )
 
     --HUnit tests for pop operation in list priority queue
     testPopL1 = TestCase $ assertEqual "test: pop element from list queue" ( QL.PQueue[1] ) ( QL.pqPop (PQueue[2,1]) )
