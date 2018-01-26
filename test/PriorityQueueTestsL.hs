@@ -5,8 +5,6 @@ module PriorityQueueTestsL where
     import Data.List
     import Test.HUnit
         
-
-    --testL = TestCase $ assertEqual "test push1 empty Queue" (QL.PQueue [1]) ( QL.pqPush 1 (QL.PQueue []) )
     --HUnit tests for push operation in list priority queue
     testPushL1 = TestCase $ assertEqual "test: push element to empty list queue" ( QL.PQueue[1] ) ( QL.pqPush 1 (PQueue[]) )
     testPushL2 = TestCase $ assertEqual "test: push greater  element to not empty list queue" ( QL.PQueue[1,2,3] ) ( QL.pqPush 3 (PQueue[1,2]) )
@@ -46,6 +44,6 @@ module PriorityQueueTestsL where
         runTestTT testPopL1
         runTestTT testPeekL1
 
-        PutStrLn " "
+        PutStrLn "QuickCheckings"
         quickCheck (checkOrder :: QL.Queue Int -> Bool)
         quickCheck (checkGreatest :: QL.Queue Int -> Bool)
