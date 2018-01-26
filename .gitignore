@@ -1,6 +1,7 @@
 dist
 dist-*
 cabal-dev
+*.swp
 *.o
 *.hi
 *.chi
@@ -18,9 +19,5 @@ cabal.sandbox.config
 .stack-work/
 cabal.project.local
 .stack-work/
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 *~
 .HTF/
