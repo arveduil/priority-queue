@@ -10,10 +10,6 @@ import Control.Parallel (par, pseq)
 qBTFromList :: Ord a => [a] -> QBT.Queue a
 qBTFromList xs = foldr QBT.push QBT.emptyQ xs
 
-qBTFromList :: Ord a => [a] -> QBT.Queue a
-qBTFromList xs = foldr QBT.push QBT.emptyQ xs
-
-
 qLFromList :: Ord a => [a] -> QL.PQueue a
 qLFromList xs = foldr QL.pqPush (QL.PQueue []) xs
 
